@@ -9,10 +9,10 @@ app.use(bodyParser.json());
 
 // Configuración SQL Server
 const config = {
-    server: 'capstone-bd-sqlserver.database.windows.net',
-    database: 'rpcapstone',
-    user: 'admincapstone',
-    password: 'kurohane1234@',
+    server: process.env.DB_SERVER,
+    database: process.env.DB_DATABASE,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
     options: {
         encrypt: true,
         trustServerCertificate: false
