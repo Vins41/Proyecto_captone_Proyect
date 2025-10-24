@@ -1,6 +1,6 @@
 Pasos para el funcionamiento de los modelos en Python
 
-Abrir la carpeta en Visual Code
+Abrir la carpeta T2_MODELOS_ML_PROYECTO_CAPSTONE en Visual Code
 
 Abrir la terminal dentro de VS para crear el venv(entorno donde se instalara las librerías de py)
 Dentro de la terminal se debe ingresar las siguientes líneas:
@@ -9,9 +9,12 @@ Dentro de la terminal se debe ingresar las siguientes líneas:
  .venv\Scripts\activate
  pip install -r requirements.txt
 
-Una vez terminado de instalar todas las librerías se debe verificar que sigue dentro del entorno virtual y ejecutar la siguiente linea:
+Una vez terminado de instalar todas las librerías se debe cerrar el VS y volver a abrir
 
- py main.py   
+Despues de volver a abrir el VS en la ubicacion de la carpeta se debe entrar a la terminal y ingresar las siguientes lineas
+
+ .venv\Scripts\activate
+ py main.py   o  python main.py    (Si no funciona con uno, pruebe con el otro por que el error es según la instalación de Python)
 
 Mostrara la predicción de los modelos y generara la carpeta results donde estará las graficas de todos los modelos usados hasta el momento 6/12.
 
