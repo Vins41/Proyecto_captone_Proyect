@@ -1,0 +1,17 @@
+Pasos para el funcionamiento de los modelos en Python
+
+Abrir la carpeta en Visual Code
+
+Abrir la terminal dentro de VS para crear el venv(entorno donde se instalara las librerías de py)
+Dentro de la terminal se debe ingresar las siguientes líneas:
+
+ python -m venv .venv   
+ .venv\Scripts\activate
+ pip install -r requirements.txt
+
+Una vez terminado de instalar todas las librerías se debe verificar que sigue dentro del entorno virtual y ejecutar la siguiente linea:
+
+ py main.py   
+
+Mostrara la predicción de los modelos y generara la carpeta results donde estará las graficas de todos los modelos usados hasta el momento 6/12.
+
