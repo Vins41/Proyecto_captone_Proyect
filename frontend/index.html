@@ -3,28 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Encuesta PSS-10</title>
+<title>Test de Estrés PSS-10</title>
 <link rel="stylesheet" href="style.css">
+<!-- SweetAlert2 para ventanas emergentes -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>Encuesta PSS-10</h1>
-        
-        <label>Género:</label>
-        <select id="genero">
-            <option value="0">Hombre</option>
-            <option value="1">Mujer</option>
-        </select>
+  <div class="container">
+    <h1>Test de Estrés Percibido (PSS-10)</h1>
 
-        <form id="formEncuesta">
-            <div id="preguntas">
-                <!-- Preguntas dinámicas generadas por JS -->
-            </div>
+    <label>Género:</label>
+    <select id="genero">
+      <option value="0">Hombre</option>
+      <option value="1">Mujer</option>
+    </select>
 
-            <button type="submit">Enviar</button>
-        </form>
-    </div>
+    <form id="formEncuesta">
+      <div id="preguntas"></div>
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const sql = require('mssql');
+const axios = require('axios'); // para llamar al servicio Python
 
 const app = express();
 app.use(cors());
@@ -9,10 +10,10 @@ app.use(bodyParser.json());
 
 // Configuración SQL Server
 const config = {
-    server: process.env.DB_SERVER,
-    database: process.env.DB_DATABASE,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
+    server: 'capstone-bd-sqlserver.database.windows.net',
+    database: 'rpcapstone',
+    user: 'admincapstone',
+    password: 'korosensei6979@',
     options: {
         encrypt: true,
         trustServerCertificate: false
@@ -26,11 +27,12 @@ async function startServer() {
         pool = await sql.connect(config);
         console.log('✅ Conectado a SQL Server');
 
-        // Endpoint
+        // Endpoint principal
         app.post('/respuestas', async (req, res) => {
             const { genero, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10 } = req.body;
 
             try {
+                // 1️⃣ Guardar datos crudos en SQL Server
                 const result = await pool.request()
                     .input('genero', sql.TinyInt, genero)
                     .input('p1', sql.TinyInt, p1)
@@ -49,10 +51,24 @@ async function startServer() {
                         VALUES (@genero, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, GETDATE())
                     `);
 
-                res.send({ message: '✅ Respuestas guardadas correctamente', rowsAffected: result.rowsAffected });
+                console.log('✅ Respuestas guardadas correctamente');
+
+                // 2️⃣ Enviar al servicio de predicción en Azure (Flask)
+                const pythonResponse = await axios.post(
+                    'https://ml-capst-api-e5a3hrhqbhhbc7gr.brazilsouth-01.azurewebsites.net/predict',
+                    { genero, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10 }
+                );
+
+                // 3️⃣ Devolver al frontend el resultado del modelo
+                return res.json({
+                    message: '✅ Respuestas guardadas y analizadas correctamente',
+                    prediccion: pythonResponse.data.prediccion,
+                    probabilidad: pythonResponse.data.probabilidad
+                });
+
             } catch (err) {
-                console.error('❌ Error al guardar respuestas:', err);
-                res.status(500).send('Error al guardar respuestas');
+                console.error('❌ Error en /respuestas:', err.message);
+                res.status(500).json({ error: 'Error al procesar las respuestas', detalle: err.message });
             }
         });
 
