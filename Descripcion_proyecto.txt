@@ -14,11 +14,11 @@ Desarrollado en Node.js y Express, recibe las respuestas del test desde el front
 en la base de datos de azure.
 
 
-3. MODELOS DE MACHINE LEARNING (carpeta T2_MODELOS_ML_PROYECTO_CAPSTONE)
+3. MODELOS DE MACHINE LEARNING (carpeta Entrenamiento_de_los_12_modelos_ML_y_Registro_PSS10)
 
 Esta carpeta contiene el código principal del Proyecto deCapstone.
 
-Implementa 6 de los 12 modelos de Machine Learning que se usara para clasificar el tipo de estrés (Eustrés o Distrés).
+Implementa los 12 modelos de Machine Learning que se usara para clasificar el tipo de estrés (Eustrés o Distrés).
 
 Incluye:
 
