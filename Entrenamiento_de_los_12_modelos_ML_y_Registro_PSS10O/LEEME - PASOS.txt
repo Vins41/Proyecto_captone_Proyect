@@ -1,6 +1,6 @@
 Pasos para el funcionamiento de los modelos en Python
 
-Abrir la carpeta T2_MODELOS_ML_PROYECTO_CAPSTONE en Visual Code
+Abrir la carpeta Entrenamiento_de_los_12_modelos_ML_y_Registro_PSS10 en Visual Code
 
 Abrir la terminal dentro de VS para crear el venv(entorno donde se instalara las librerías de py)
 Dentro de la terminal se debe ingresar las siguientes líneas:
