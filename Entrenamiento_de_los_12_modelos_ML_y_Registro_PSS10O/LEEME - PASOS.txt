@@ -16,5 +16,5 @@ Despues de volver a abrir el VS en la ubicacion de la carpeta se debe entrar a l
  .venv\Scripts\activate
  py main.py   o  python main.py    (Si no funciona con uno, pruebe con el otro por que el error es según la instalación de Python)
 
-Mostrara la predicción de los modelos y generara la carpeta results donde estará las graficas de todos los modelos usados hasta el momento 6/12.
+Mostrara la predicción de los modelos y generara la carpeta results donde estará las graficas de todos los modelos, del mismo modo agrega los graficos EDA Y EL Archivo csv filtrado. 
 
