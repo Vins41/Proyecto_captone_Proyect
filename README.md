@@ -1,31 +1,43 @@
-DESCRIPCIÓN DEL PROYECTO
+🎓 Capstone Project: Sistema de Clasificación de Estrés (PSS-10) con Machine Learning
+Este proyecto integral tiene como objetivo identificar y clasificar los niveles de estrés (Eustrés y Distrés) en estudiantes mediante el Test PSS-10. La solución combina una plataforma web para la toma de datos y un motor de Inteligencia Artificial basado en múltiples modelos de clasificación.
 
-Este repositorio contiene tres componentes principales:
+🏗️ Arquitectura del Sistema
+El repositorio está organizado en tres componentes fundamentales:
 
-1. FRONTEND (carpeta frontend)
+1. 🌐 FRONTEND (/frontend)
+Tecnologías: HTML5, CSS3, JavaScript.
 
-Contiene la interfaz del Test de Estrés (PSS-10) que se desarrollo en HTML, CSS y JavaScript.
+Descripción: Interfaz de usuario donde se desarrolla el Test de Estrés. Permite una captura de datos fluida y el envío de respuestas al servidor de forma asíncrona.
 
-Permite que los estudiantes respondan el cuestionario y envíen sus respuestas al backend.
+2. ⚙️ BACKEND (/backend)
+Tecnologías: Node.js, Express.
 
-2. BACKEND (carpeta backend)
+Nube: Microsoft Azure SQL Database.
 
-Desarrollado en Node.js y Express, recibe las respuestas del test desde el frontend y las guarda
-en la base de datos de azure.
+Descripción: API REST que gestiona la lógica de negocio, recibe las respuestas del frontend y garantiza la persistencia de la información en una base de datos en la nube.
 
+3. 🤖 MACHINE LEARNING (/Entrenamiento_de_los_12_modelos_ML_y_Registro_PSS10)
+Esta es la carpeta núcleo del proyecto de investigación, donde se implementa la inteligencia del sistema.
 
-3. MODELOS DE MACHINE LEARNING (carpeta Entrenamiento_de_los_12_modelos_ML_y_Registro_PSS10)
+Tecnologías: Python, Scikit-Learn, Pandas.
 
-Esta carpeta contiene el código principal del Proyecto deCapstone.
+Análisis: Implementación y evaluación comparativa de 12 modelos de Machine Learning para encontrar el algoritmo con mayor precisión predictiva.
 
-Implementa los 12 modelos de Machine Learning que se usara para clasificar el tipo de estrés (Eustrés o Distrés).
+Archivos clave:
 
-Incluye:
+main.py: Script principal de ejecución y entrenamiento.
 
-main.py → script principal.
+Registros.csv: Dataset base utilizado para el entrenamiento.
 
-Registros.csv → dataset base.
+requirements.txt: Dependencias necesarias para el entorno.
 
-requirements.txt → dependencias.
+LEEME - PASOS.txt: Documentación técnica para la puesta en marcha de los modelos.
 
-LEEME - PASOS.txt → pasos a seguir para el funcionamiento de los modelos 
+🛠️ Stack Tecnológico Completo
+Desarrollo Web: JavaScript (Node.js/Express)
+
+Ciencia de Datos: Python (Scikit-Learn)
+
+Infraestructura Cloud: Microsoft Azure
+
+Control de Versiones: Git / GitHub
